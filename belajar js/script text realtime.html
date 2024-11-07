@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <h3>Belajar JS</h3>
+    <div id="header">Waktu akan tampil di sini</div>
+    <script> 
+        document.write("Hi, Welcome to Javascript"); 
+        function myfirst(callback) {
+            myDisplayer("Hello");
+            callback();
+        }
+        function mySecond() {
+            myDisplayer("Goodbye");
+        }
+        function myDisplayer(massage) {
+            console.log(massage);
+        }
+        myfirst(mySecond);
+        
+        console.log("I print first!");
+        setTimeout(() => {
+            console.log("I print after 3 seconds");
+        }, 3000);
+        console.log("I print second!");
+        
+        function setTime() {
+            const header = document.getElementById("header");
+            header.textContent = new Date().toString();
+        }
+        setInterval(setTime, 2000);
+        console.log("Program Finish");
+        
+    </script>
+</head>
+<body>
+</body>
+</html>
